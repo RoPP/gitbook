@@ -1,2 +1,2 @@
-## Configuration et Initialisation ##
+## Configuration et initialisation ##
 

@@ -1,1 +1,1 @@
-#Usage Intermédiaire
+#Usage intermédiaire

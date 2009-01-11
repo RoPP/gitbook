@@ -3,11 +3,11 @@
 ### Assurer une bonne performance ###
 
 Sur les dépôts de grande taille, git nécessite une compression pour
-éviter que les informations de l'historique prennent trop d'espace
+éviter que les informations de l’historique ne prennent trop d’espace
 sur le disque et en mémoire.
 
-Cette compression n'est pas effectuée automatiquement. Vous devrez donc,
-à l'occasion, lancer linkgit:git-gc[1]:
+Cette compression n’est pas effectuée automatiquement. Vous devrez donc,
+à l’occasion, lancer linkgit:git-gc[1] :
 
     $ git gc
 
@@ -19,8 +19,8 @@ pas sur autre chose.
 ### Assurer la fiabilité ###
 
 La commande linkgit:git-fsck[1] lance une série de vérification de consistance
-du dépôt, et rapporte les problèmes. Cela peut aussi prendre un peu de temps.
-L'avertissement le plus courant concerne les objets "dangling" (suspendus):
+du dépôt et rapporte les problèmes. Cela peut aussi prendre un peu de temps.
+L’avertissement le plus courant concerne les objets « dangling » (suspendus) :
 
     $ git fsck
     dangling commit 7281251ddd2a61e38657c827739c57015671a6b3
@@ -34,5 +34,5 @@ L'avertissement le plus courant concerne les objets "dangling" (suspendus):
     ...
 
 Les objets suspendus ne posent aucun problèmes. Au pire ils prennent un petit
-peu plus d'espace disque. Ils servent parfois de solution de dernier secours
+peu plus d’espace disque. Ils servent parfois de solution de secours
 pour récupérer des travaux perdus.

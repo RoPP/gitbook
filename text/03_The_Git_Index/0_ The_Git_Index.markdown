@@ -1,17 +1,17 @@
-## L'Index Git ##
+## L’index Git ##
 
-L'index Git est une zone d'assemblage entre votre répertoire de travail
-et votre dépôt. Vous pouvez utiliser l'index pour construire un groupe de
+L’index Git est une zone d’assemblage entre votre répertoire de travail
+et votre dépôt. Vous pouvez utiliser l’index pour construire un groupe de
 changements qui seront committés ensembles. Quand vous créez un commit, ce
-qui se trouve dans l'index est ce qui est committé, et non ce qui se trouve
+qui se trouve dans l’index est ce qui est committé, et non ce qui se trouve
 dans le répertoire de travail.
 
-### A l'Intérieur de l'Index ###
+### À l’intérieur de l’index ###
 
-La façon la plus simple de voir ce qu'est l'index est d'utiliser la commande
+La façon la plus simple de voir ce qu’est l’index est d’utiliser la commande
 linkgit:git-status[1]. Quand vous lancez git status, vous pouvez voir quels
-fichiers sont assemblés (actuellement dans l'index), quels sont ceux
-modifiés mais pas assemblés, et ceux qui ne sont pas suivis.
+fichiers sont assemblés (actuellement dans l’index), quels sont ceux
+modifiés mais pas assemblés et ceux qui ne sont pas suivis.
 
     $>git status
     # On branch master
@@ -35,12 +35,12 @@ modifiés mais pas assemblés, et ceux qui ne sont pas suivis.
     #	blametree-init
     #	git-gui/git-citool
 
-Si vous effacé complètement l'index, vous ne perdrez généralement aucune
+Si vous effacé complètement l’index, vous ne perdrez généralement aucune
 information tant que vous avez le nom du tree qui est décrit.
 
 Grâce à cela, vous devriez avoir un bonne compréhension des bases de ce que
-Git fait en arrière plan, et pourquoi il est différent de la plupart des
+Git fait en arrière plan et pourquoi il est différent de la plupart des
 autres systèmes de contrôle de version. Ne vous inquiétez pas si vous
-n'avez pas encore tout compris; nous reviendrons sur tous ces point dans
+n’avez pas encore tout compris, nous reviendrons sur tous ces point dans
 les prochaines parties du livre. Maintenant, nous sommes prêts à installer,
 configurer et utiliser Git.

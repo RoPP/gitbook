@@ -1,13 +1,13 @@
 ### Mac 10.4 ###
 
 Pour Mac 10.4 et 10.5, vous pouvez installer Git via [MacPorts](http://www.macports.org/), 
-s'il est déjà installé. Sinon, vous pouvez l'installer depuis [ici](http://www.macports.org/install.php).
+s’il est déjà installé. Sinon, vous pouvez l’installer depuis [ici](http://www.macports.org/install.php).
 
-Une fois que MacPorts est installé, il vous suffit de faire ceci:
+Une fois que MacPorts est installé, il vous suffit de faire ceci :
 
     $ sudo port install git-core
 
-Si vous préférez installer Git depuis le code source, ces articles peuvent vous aider:
+Si vous préférez installer Git depuis le code source, ces articles peuvent vous aider :
 
 [Article: Installing Git on Tiger](http://rails.wincent.com/wiki/Installing_Git_1.5.2.3_on_Mac_OS_X_Tiger)
 

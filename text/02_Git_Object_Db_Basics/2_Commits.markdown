@@ -1,12 +1,12 @@
-### L'Objet Commit ###
+### L’objet commit ###
 
-L'objet "commit" lie l'état physique d'un "tree" avec une description
-de la manière et de la raison de l'arrivée à cet état.
+L’objet « commit » lie l’état physique d’un « tree » avec une description
+de la manière et de la raison de l’arrivée à cet état.
 
 [fig:object-commit]
 
 Vous pouvez utiliser linkgit:git-show[1] ou linkgit:git-log[1] avec
-l'option  --pretty=raw pour examiner vos commits favoris:
+l’option --pretty=raw pour examiner vos « commits » favoris :
 
     $ git show -s --pretty=raw 2be7fcb476
     commit 2be7fcb4764f2dbcee52635b91fedb1b3dcf7ab4
@@ -19,43 +19,43 @@ l'option  --pretty=raw pour examiner vos commits favoris:
 
         Signed-off-by: Junio C Hamano <gitster@pobox.com>
 
-Comme vous pouvez le voir, un commit est défini par:
+Comme vous pouvez le voir, un commit est défini par :
 
-- Un **tree**: Le nom SHA1 de l'objet "tree" (comme défini précédemment),
-  représentant le contenu d'un répertoire à un certain moment.
-- **parent(s)**: Le nom SHA1 de (ou des) numéro de commits qui représente
-  l'étape antérieure dans l'historique du projet. L'exemple ci-dessus a un
-  parent; les commits mergés peuvent en avoir plus d'un. Un commit sans parent
-  est nommé le commit "racine", et représente la révision initiale d'un projet.
+- Un **« tree »** : Le nom SHA1 de l’objet « tree » (comme défini précédemment)
+  représentant le contenu d’un répertoire à un certain moment.
+- **parent(s)** : Le nom SHA1 du (ou des) numéro de « commits » qui représente(nt)
+  l’étape antérieure dans l’historique du projet. L’exemple ci-dessus a un
+  parent; les commits mergés peuvent en avoir plus d’un. Un « commit » sans parent
+  est nommé le « commit racine » et représente la révision initiale d’un projet.
   Chaque projet doit contenir au moins une racine. Un projet peut avoir
   plusieurs racine, bien que ça ne soit pas très commun (ou que ça ne soit pas
   une bonne idée).
-- Un **author**: Le nom de la personne responsable de ce changement,
+- Un **author** : Le nom de la personne responsable de ce changement,
   avec sa date
-- Un **committer**: Le nom de la personne qui a créé le commit, avec la date
-  de création. Cet attribut peut être différent de l'auteur; par exemple, si
-  l'auteur écrit un patch est l'envoi à une autre personne par mail, cet
-  personne peut utilisé le patch pour créer le commit.
-- Un **comment** qui décrit ce commit.
+- Un **committer** : Le nom de la personne qui a créé le « commit », avec la date
+  de création. Cet attribut peut être différent de l’auteur, par exemple, si
+  l’auteur écrit un patch et l’envoi à une autre personne par mail, cet
+  personne peut utilisé le patch pour créer le « commit ».
+- Un **comment** qui décrit ce « commit ».
 
-Notez qu'un commit ne contient pas d'information à propos de ce qui a été
-modifié; tous les changements sont calculés en comparant les contenus du
-"tree" référencé dans ce commit avec le "tree" associé au(x) parent(s) du
-commit. En particulier, git n'essaye pas d'enregistrer le rennomage de fichier
-explicitement, bien qu'il puisse identifier des cas où la persistance
-des données d'un fichier avec un chemin modifié suggère un rennomage. (Voir,
-par exemple, la commande linkgit:git-diff[1] avec l'option -M).
+Notez qu’un « commit » ne contient pas d’information à propos de ce qui a été
+modifié ; tous les changements sont calculés en comparant les contenus du
+« tree » référencé dans ce « commit » avec le « tree » associé au(x) parent(s) du
+« commit ». En particulier, git n’essaye pas d’enregistrer le rennomage de fichier
+explicitement, bien qu’il puisse identifier des cas où la persistance
+des données d’un fichier avec un chemin modifié suggère un rennomage (voir
+par exemple, la commande linkgit:git-diff[1] avec l’option -M).
 
-Un commit est normalement créé avec la commande linkgit:git-commit[1], qui
-crée un commit dont le parent est est le HEAD courant, et avec le "tree" pris
-depuis le contenu actuellement stocké dans l'index.
+Un « commit » est normalement créé avec la commande linkgit:git-commit[1], qui
+crée un « commit » dont le parent est le HEAD courant et avec le « tree » pris
+depuis le contenu actuellement stocké dans l’index.
 
-### Le Modèle Objet ###
+### Le modèle objet ###
 
-Donc, maintenant que nous avons vu les 3 types d'objets principaux (blob, tree
+Donc, maintenant que nous avons vu les 3 types d’objets principaux (blob, tree
 et commit), regardons rapidement comment ils travaillent ensemble.
 
-Si nous avons un simple projet avec la structure de dossiers suivante:
+Si nous avons un simple projet avec la structure de dossiers suivante :
 
     $>tree
     .
@@ -67,11 +67,11 @@ Si nous avons un simple projet avec la structure de dossiers suivante:
 
     2 directories, 3 files
 
-Et si nous committons ce projet sur un dépôt Git, il sera représenté comme ça:
+Et si nous committons ce projet sur un dépôt Git, il sera représenté comme ça :
 
 [fig:objects-example]
 
 Vous pouvez voir que nous avons créé un objet **tree** pour chaque répertoire (pour la
 racine aussi) et un objet **blob** pour chaque fichier. Ensuite nous avons un objet
-**commit** qui pointe vers la racine, afin que nous puissions récupérer l'apparence
+**commit** qui pointe vers la racine, afin que nous puissions récupérer l’apparence
 du projet quand il a été committé.

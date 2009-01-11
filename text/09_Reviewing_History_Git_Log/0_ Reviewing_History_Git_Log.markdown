@@ -1,9 +1,9 @@
-## Analyser l'Historique - Git Log ##
+## Analyser l’historique — Git log ##
 
 La commande linkgit:git-log[1] vous montrera des listes de commits.
 Toute seule, elle vous montrera les commits visible depuis le commit
-parent de votre version courante; mais vous pouvez faire des
-requêtes plus spécifiques:
+parent de votre version courante mais vous pouvez faire des
+requêtes plus spécifiques :
 
     $ git log v2.5..	    # commits depuis (non-visible depuis) v2.5
     $ git log test..master	# commits visibles depuis master mais pas test
@@ -17,14 +17,14 @@ requêtes plus spécifiques:
     			            #    contenant la chaîne 'foo()'
     $ git log --no-merges	# ne pas montrer les commits de merge
 
-Et vous pouvez bien sûr combiner toutes ces options; la requête
+Et vous pouvez bien sûr combiner toutes ces options, la requête
 suivante trouve tous les commits depuis v2.5 qui touchent le
-Makefile et tous les fichier sous fs/:
+Makefile et tous les fichier sous fs/ :
 
     $ git log v2.5.. Makefile fs/
 
 Git log vous montrera la liste de chaque commit, le plus récent
-d'abord, qui correspond aux arguments donnés à la commande de log.
+d’abord, qui correspond aux arguments donnés à la commande de log.
 
 	commit f491239170cb1463c7c3cd970862d6de636ba787
 	Author: Matt McCutchen <matt@mattmccutchen.net>
@@ -39,7 +39,7 @@ d'abord, qui correspond aux arguments donnés à la commande de log.
 	    bash completion: 'git apply' should use 'fix' not 'strip'
 	    Bring completion up to date with the man page.
 
-Vous pouvez aussi demander à git de vous montrer les patches:
+Vous pouvez aussi demander à git de vous montrer les patches :
 
     $ git log -p
 
@@ -63,9 +63,9 @@ Vous pouvez aussi demander à git de vous montrer les patches:
 
 	 pserver (/etc/inetd.conf):
 
-### Statistique sur les Log ###
+### Statistique sur les log ###
 
-Vous pouvez rajouter l'options <code>--stat</code> à 'git log' pour
+Vous pouvez rajouter l’options <code>--stat</code> à 'git log' pour
 obtenir la liste des fichiers qui ont été changés dans un commit
 et afficher combien de lignes ont été rajoutées ou retirées de chaque
 fichier.
@@ -83,11 +83,11 @@ fichier.
 	 2 files changed, 16 insertions(+), 1 deletions(-)
 
 
-### Formater le Log ###
+### Formater le log ###
 
 Vous pouvez formater la sortie du log pour afficher ce que vous voulez.
-L'option '--pretty' peut servir pour afficher les log avec un format
-pré-réglé, comme 'oneline':
+L’option '--pretty' peut servir pour afficher les log avec un format
+pré-réglé, comme 'oneline' :
 
 	$ git log --pretty=oneline
 	a6b444f570558a5f31ab508dc2a24dc34773825f dammit, this is the second time this has reverted
@@ -97,7 +97,7 @@ pré-réglé, comme 'oneline':
 	0f87b4d9020fff756c18323106b3fd4e2f422135 merged recent changes: * accepts relative alt pat
 	f0ce7d5979dfb0f415799d086e14a8d2f9653300 updated the Manifest file
 
-Ou vous pouvez utiliser le format 'short':
+Ou vous pouvez utiliser le format 'short' :
 
 	$ git log --pretty=short
 	commit a6b444f570558a5f31ab508dc2a24dc34773825f
@@ -117,7 +117,7 @@ Ou vous pouvez utiliser le format 'short':
 
 Vous pouvez aussi utiliser 'medium', 'full', 'fuller', 'email' ou 'raw'. Si ces
 format ne sont pas exactement ce dont vous avez besoin, vous pouvez créer votre
-propre format avec l'option '--pretty=format' (voir la documentation de
+propre format avec l’option '--pretty=format' (voir la documentation de
 linkgit:git-log[1]) pour toutes les options de formatage.
 
 	$ git log --pretty=format:'%h was %an, %ar, message: %s'
@@ -128,7 +128,7 @@ linkgit:git-log[1]) pour toutes les options de formatage.
 	0f87b4d was Scott Chacon, 12 days ago, message: merged recent changes:
 	
 Autre chose intéressante, vous pouvez aussi visualiser le graphe des commits
-avec l'options '--graph', comme ceci:
+avec l’options '--graph', comme ceci:
 
 	$ git log --pretty=format:'%h : %s' --graph
 	* 2d3acf9 : ignore errors from SIGCHLD on trap
@@ -142,26 +142,26 @@ avec l'options '--graph', comme ceci:
 	* d6016bc : require time for xmlschema
 
 Ça vous montrera un représentation plutôt réussie des lignes de
-l'historique des commits.
+l’historique des commits.
 
-### Ordonner le Log ###
+### Ordonner le log ###
 
 Vous pouvez aussi voir les entrées de log dans des ordres différents.
 Notez que git log commence par le commit le plus récent et va
-à reculons vers ses parents; cependant, puisque l'historique de git
+à reculons vers ses parents, cependant, puisque l’historique de git
 peut contenir de multiples lignes indépendantes de développement,
-l'ordre de l'affiche des commits est plutôt arbitraire.
+l’ordre de l’affichage des commits est plutôt arbitraire.
 
 Si vous voulez spécifier un ordre en particulier, vous pouvez ajouter
 une option à la commande git log.
 
-Pa défaut les commit sont montrés dans l'ordre inversement
+Par défaut, les commit sont montrés dans l’ordre inversement
 chronologique.
 
-Cependant, si vous ajoutez l'option '--topo-order', les commits
-apparaîtrons dans l'ordre topologique (i.e. les commits descendants
+Cependant, si vous ajoutez l’option '--topo-order', les commits
+apparaîtrons dans l’ordre topologique (i.e. les commits descendants
 sont affichés avant leurs parents). Si nous regardons le git log
-pour le dépôt de Grit dans un ordre topologique, vous pouvez voir
+pour le dépôt de Git dans un ordre topologique, vous pouvez voir
 que toutes les lignes de développement sont regroupées ensembles.
 
 	$ git log --pretty=format:'%h : %s' --topo-order --graph
@@ -195,9 +195,9 @@ que toutes les lignes de développement sont regroupées ensembles.
 
 Vous pouvez aussi utiliser '--date-order', qui ordonne les commits par date.
 Cette option est similaire à '--topo-order' dans le sens où les parents seront affichés après
-tus leurs enfants, mais autrement les commits sont toujours ordonnés suivant la date. Vous
-pouvez voir ici que les lignes de développement sont groupées ensembles, et qu'elle
-s'éloignent quand un développement parallèle à lieu:
+tous leurs enfants, mais autrement les commits sont toujours ordonnés suivant la date. Vous
+pouvez voir ici que les lignes de développement sont groupées ensembles et qu’elles
+s’éloignent quand un développement parallèle à lieu :
 
 	$ git log --pretty=format:'%h : %s' --date-order --graph
 	*   4a904d7 : Merge branch 'idx2'
@@ -228,6 +228,6 @@ s'éloignent quand un développement parallèle à lieu:
 	| * | | a0e4a3d : updated grit gemspec
 	| * | | 7569d0d : including code from github updates
 
-Enfin, vous pouvez inverser l'ordre du log avec l'option '--reverse'.
+Enfin, vous pouvez inverser l’ordre du log avec l’option '--reverse'.
 
 [gitcast:c4-git-log]("GitCast #4: Git Log")
